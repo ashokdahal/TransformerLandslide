@@ -1,0 +1,51 @@
+{
+  "dataprepinargs": {
+    "covar": "Data/covars.npy",
+    "ariasmetric": "Data/ariasintensity.npy",
+    "response": "Data/Ls.npy",
+    "normalize": true,
+    "testsize": 0.1,
+    "removezeros": false,
+    "addPGV": true,
+    "onlyPGV": false,
+    "inference": false,
+    "Arias": true
+  },
+  "modelparam": {
+    "depth": 1,
+    "infeatures": 6,
+    "timewindow": 6513,
+    "timefeature": 3,
+    "outfeatures": 512,
+    "headsize": 1,
+    "kernel_initializer": "he_normal",
+    "bias_initializer": "he_normal",
+    "droupout": true,
+    "batchnormalization": true,
+    "dropoutratio": 0.2,
+    "mlpdroupoutratio": 0.2,
+    "lastactivation": "relu",
+    "middleactivation": "relu",
+    "lr": 1e-4,
+    "decay_steps": 50000,
+    "decay_rate": 0.95,
+    "weight_nolandslide": 1,
+    "weight_landslide": 9,
+    "mlpunits": [
+      128,
+      128
+    ],
+    "num_heads": 2,
+    "ff_dim": 4,
+    "constdepth": 8,
+    "constwidth": 32,
+    "n_classes": 1,
+    "trdropoutratio": 0.3
+  },
+  "trainparam": {
+    "nepoch": 50,
+    "ckpt": "checkpoints/AriasIntensity/",
+    "batchsize": 16,
+    "valsplit": 0.3
+  }
+}
